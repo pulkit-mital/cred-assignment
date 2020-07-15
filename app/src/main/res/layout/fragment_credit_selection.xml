@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/drawable_bottom_sheet_top_rouned_corners"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_heading"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_20dp"
+                android:paddingTop="@dimen/_20dp"
+                android:paddingEnd="@dimen/_20dp"
+                android:paddingBottom="@dimen/_10dp"
+                android:text="@string/text_heading"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_sub_heading"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_20dp"
+                android:paddingLeft="@dimen/_20dp"
+                android:paddingEnd="@dimen/_20dp"
+                android:paddingRight="@dimen/_20dp"
+                android:paddingBottom="@dimen/_20dp"
+                android:text="@string/text_sub_heading"
+                android:textColor="@color/sub_heading_text_color"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_heading" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginLeft="@dimen/_20dp"
+                android:layout_marginRight="@dimen/_20dp"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:layout_constraintBottom_toTopOf="@id/btn_emi_selection"
+                app:layout_constraintTop_toBottomOf="@id/tv_sub_heading">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <me.tankery.lib.circularseekbar.CircularSeekBar
+                        android:id="@+id/seekbar"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        app:cs_circle_stroke_width="8dp"
+                        app:cs_circle_style="round"
+                        app:cs_end_angle="270"
+                        app:cs_max = "400000"
+                        app:cs_progress = "150000"
+                        app:cs_maintain_equal_circle="true"
+                        app:cs_start_angle="-90"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_seek_bar_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/seekbar"
+                        app:layout_constraintEnd_toEndOf="@id/seekbar"
+                        app:layout_constraintStart_toStartOf="@id/seekbar"
+                        app:layout_constraintTop_toTopOf="@id/seekbar"
+                        tools:text="Rs 150000"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_emi_selection"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_80dp"
+                android:background="@drawable/drawable_top_rounded_button"
+                android:text="@string/proceed_emi_button_text"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/parent_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:constraint_referenced_ids="tv_heading,tv_sub_heading,cardview" />
+
+            <LinearLayout
+                android:id="@+id/ll_credit_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_20dp"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/credit_heading"
+                        android:textColor="@color/sub_heading_text_color"
+                        android:textSize="@dimen/_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_credit_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4dp"
+                        android:textColor="@color/sub_heading_text_color"
+                        android:textSize="@dimen/_14sp"
+                        android:textStyle="bold"
+                        tools:text="Rs.150000" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

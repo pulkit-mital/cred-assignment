@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Cred</string>
+    <string name="proceed_emi_button_text">Proceed to EMI Selection</string>
+    <string name="text_heading">Nikunj, how much do you need?</string>
+    <string name="text_sub_heading">move the dial and set any amount you need upto Rs 487,891</string>
+    <string name="credit_heading">credit amount</string>
+    <string name="select_bank_account_text">Select your bank account</string>
+    <string name="text_emi_heading">how do you wish to repay?</string>
+    <string name="text_emi_sub_heading">choose one of our recommended plans or create your own</string>
+    <string name="emi_heading">EMI</string>
+    <string name="duration_heading">DURATION</string>
+    <string name="select_kyc_text">Tap for 1 click KYC</string>
+    <string name="text_bank_heading">where should we send the money?</string>
+    <string name="text_bank_sub_heading">amount will be credited to this bank account, EMI will be debited from this bank account</string>
+    <string name="text_see_calculations">See Calculations</string>
+    <string name="paytm_paymentbank">Paytm Payment Bank</string>
+    <string name="paytm_paymentbank_number">1234567890</string>
+    <string name="text_change_account">change account</string>
+    <string name="text_create_plan">create your own plan</string>
+</resources>

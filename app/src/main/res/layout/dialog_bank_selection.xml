@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_emi_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/drawable_bottom_sheet_bank_selection">
+
+            <TextView
+                android:id="@+id/tv_heading"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_20dp"
+                android:paddingTop="@dimen/_20dp"
+                android:paddingEnd="@dimen/_20dp"
+                android:paddingBottom="@dimen/_10dp"
+                android:text="@string/text_bank_heading"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_sub_heading"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_20dp"
+                android:paddingLeft="@dimen/_20dp"
+                android:paddingEnd="@dimen/_20dp"
+                android:paddingRight="@dimen/_20dp"
+                android:paddingBottom="@dimen/_20dp"
+                android:text="@string/text_bank_sub_heading"
+                android:textColor="@color/sub_heading_text_color"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_heading" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/emi_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:constraint_referenced_ids="tv_heading,tv_sub_heading" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_paytm"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="@dimen/_20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_sub_heading"
+                app:srcCompat="@drawable/ic_paytm" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/iv_paytm"
+                app:layout_constraintStart_toEndOf="@id/iv_paytm"
+                app:layout_constraintTop_toTopOf="@id/iv_paytm">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_10dp"
+                    android:text="@string/paytm_paymentbank"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_10dp"
+                    android:text="@string/paytm_paymentbank_number"
+                    android:textColor="@color/sub_heading_text_color" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginLeft="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_30dp"
+                android:background="@drawable/drawable_rounded_rectangle"
+                android:text="@string/text_change_account"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_paytm" />
+            <Button
+                android:id="@+id/btn_bank_selection"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_80dp"
+                android:background="@drawable/drawable_top_rounded_button"
+                android:text="@string/select_kyc_text"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>
